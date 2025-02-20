@@ -7,6 +7,13 @@
     box-shadow: 0 0 5px #212121ec;
     
 }
+.form-box .a_button{
+    border: none;
+   padding: 0px;
+    background-color: #F4FCEE;
+    width: 70px;
+    color: #007bff;
+}
 .a_box{
     width: 100%;
    padding: 40px 0px;

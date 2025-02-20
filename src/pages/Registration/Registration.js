@@ -16,7 +16,7 @@ const Registration = () => {
                         <button type="submit">Login</button>
                         <p>
                             Don't have an account?{" "}
-                            <a href="#" onClick={() => setIsLogin(false)}>Register</a>
+                            <button className="a_button" href="#" onClick={() => setIsLogin(false)}>Register</button>
                         </p>
                     </form>
                 </div>
@@ -34,7 +34,7 @@ const Registration = () => {
                         <button type="submit">Register</button>
                         <p>
                             Already have an account?{" "}
-                            <a href="#" onClick={() => setIsLogin(true)}>Login</a>
+                            <button className="a_button" href="#" onClick={() => setIsLogin(true)}>Login</button>
                         </p>
                     </form>
                 </div>
