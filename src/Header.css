@@ -41,7 +41,39 @@
     color: White;
   
 }
+/* profile dropdown  */
+.profile-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+/* profile icon */
+.profile-icon {
+    width: 40px; /* Adjust size */
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
+  /* logout button */
+
+  .logout-btn {
+    background-color: #056c48;
+    color: white;
+    border: none;
+    padding: 5px 0px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e60000;
+  }
+
+  /* responsive web */
 @media (max-width: 480px) { 
 
     body { font-size: 14px; }

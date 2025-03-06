@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
+import { IoIosLogOut } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export function Header() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is logged in (assuming a token or flag in localStorage)
+    const userLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(userLoggedIn);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn"); // Clear login state
+    setIsLoggedIn(false);
+  };
+
   return (
     <header>
       <div className="container">
@@ -29,10 +45,16 @@ export function Header() {
                   <NavLink to={"/services"}>Services</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/registration"}>
-                    {" "}
-                    <button className="a_btn">Register/Login</button>{" "}
-                  </NavLink>
+                {isLoggedIn ? (
+                      <div className="profile-dropdown">
+                        <FaUserCircle className="profile-icon"/>
+                        <button onClick={handleLogout} className="logout-btn"><IoIosLogOut size={20} />                        </button>
+                      </div>
+                    ) : (
+                      <NavLink to={"/registration"}>
+                        <button className="a_btn">Register/Login</button>
+                      </NavLink>
+                    )}
                 </li>
               </ul>
               </nav>

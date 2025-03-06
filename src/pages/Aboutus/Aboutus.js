@@ -4,9 +4,9 @@ import "./Aboutus.css";
 function Aboutus() {
   return (
     <div style={{backgroundColor:"#F4FCEE"}} className="section">
-      <div className="banner">
+      {/* <div className="banner">
         <img src="" alt="" />
-      </div>
+      </div> */}
       <div className="container ">
         <div className="m-0,p-0">
           <h3
