@@ -1,53 +1,50 @@
 import React, { useState } from "react";
 import "./registration.css";
-import axios from 'axios';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [isLogin, setIsLogin] = useState(false);
-  const [name,setName]=useState("");
-  const [email,setEmail]=useState("");
-  const [contact,setContact]=useState("");
-  const [address,setAddress]=useState("");
-  const [password,setPassword]=useState("");
-  const navigate=useNavigate(); // to redirect after get logged in.
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  const [address, setAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-
-  const handleRegister = async (e)=>{
+  const handleRegister = async (e) => {
     e.preventDefault();
-    try{
-        const response = await axios.post(
-            "http://localhost/myapp/backend/registration.php",
-            {name,email,contact,address,password}
-        );
-        alert(response.data.message);
-    } catch{
-        alert("Registration Failed");
+    try {
+      const response = await axios.post(
+        "http://localhost/myapp/backend/registration.php",
+        { name, email, contact, address, password }
+      );
+      alert(response.data.message);
+    } catch {
+      alert("Registration Failed");
     }
   };
 
-  const handleLogin = async (e)=>{
+  const handleLogin = async (e) => {
     e.preventDefault();
-    try{
-        const response = await axios.post(
-            "http://localhost/myapp/backend/login.php",
-            {email,password}
-        );
+    try {
+      const response = await axios.post(
+        "http://localhost/myapp/backend/login.php",
+        { email, password }
+      );
 
-        if (response.data.message === "Login successful") {
-          localStorage.setItem("isLoggedIn", "true"); //  Store login state
-          navigate("/"); //  Redirect to home page
-          window.location.reload(); //  Refresh to update the header
-        } else {
-          alert("Invalid credentials!");
-        }
-        
+      if (response.data.message === "Login successful") {
+        localStorage.setItem("isLoggedIn", "true");
+        navigate("/create-order"); // Redirect to order page
+        window.location.reload();
+      } else {
+        alert("Invalid credentials!");
+      }
     } catch (error) {
       console.error("Login error:", error);
     }
-    };
-  
-  
+  };
+
   return (
     <div className="container">
       {isLogin ? (
@@ -74,7 +71,6 @@ const Registration = () => {
                 Don't have an account?{" "}
                 <button
                   className="a_button"
-                  href="#"
                   onClick={() => setIsLogin(false)}
                 >
                   Register
@@ -104,14 +100,14 @@ const Registration = () => {
               />
               <input
                 type="text"
-                placeholder="contact.no"
+                placeholder="Contact No"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
                 required
               />
               <input
                 type="text"
-                placeholder="current add"
+                placeholder="Current Address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 required
@@ -128,7 +124,6 @@ const Registration = () => {
                 Already have an account?{" "}
                 <button
                   className="a_button"
-                  href="#"
                   onClick={() => setIsLogin(true)}
                 >
                   Login

@@ -47,8 +47,11 @@ export function Header() {
                 <li>
                 {isLoggedIn ? (
                       <div className="profile-dropdown">
+                        <NavLink to={"/create-order"}>
+                        <li style={{fontSize:"17px",  fontWeight:"600"}}>Order</li>
+                      </NavLink>
                         <FaUserCircle className="profile-icon"/>
-                        <button onClick={handleLogout} className="logout-btn"><IoIosLogOut size={20} />                        </button>
+                        <button onClick={handleLogout} className="logout-btn"><IoIosLogOut size={20} /></button>
                       </div>
                     ) : (
                       <NavLink to={"/registration"}>

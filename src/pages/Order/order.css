@@ -1,0 +1,105 @@
+/* General container styling */
+.order-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Page heading */
+.order-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Order form container */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual order block */
+.order-block {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Labels */
+.order-block label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+  text-align: left;
+}
+
+/* Input fields and select dropdowns */
+.order-block input,
+.order-block select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.order-block input:focus,
+.order-block select:focus {
+  border-color: #007bff;
+}
+
+/* Add More and Submit Buttons */
+.add-more-btn,
+.submit-btn {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.add-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn {
+  background-color: #28a745;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Delete Button */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
