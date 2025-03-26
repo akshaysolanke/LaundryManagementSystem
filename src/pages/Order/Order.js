@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./order.css";
+import axios from "axios";
 
 const Order = () => {
   const [orders, setOrders] = useState([
-    { id: 1, category: "", quantity: "", service: "" },
+    { id: Date.now(), category: "", quantity: "", service: "" },
   ]);
 
   // Handle change in input fields
@@ -24,11 +25,24 @@ const Order = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Orders:", orders);
-    alert("Order placed successfully!");
-    setOrders([{ id: 1, category: "", quantity: "", service: "" }]); // Reset form
+    try {
+      const response = await axios.post(
+        "http://localhost/myapp/backend/order.php",
+        orders  //Send orders directly
+      );
+
+      console.log(response.data)
+      alert("Order placed successfully");
+
+      //Reset form only after successful submission
+      setOrders([{ id: Date.now(), category: "", quantity: "", service: "" }]);
+      
+    } catch (error) {
+      alert("Order Submission Failed");
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -72,7 +86,11 @@ const Order = () => {
 
             {/* Delete Button */}
             {orders.length > 1 && (
-              <button className="delete-btn" type="button" onClick={() => deleteOrder(order.id)}>
+              <button
+                className="delete-btn"
+                type="button"
+                onClick={() => deleteOrder(order.id)}
+              >
                 Remove Order
               </button>
             )}

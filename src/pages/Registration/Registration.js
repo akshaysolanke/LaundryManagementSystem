@@ -19,9 +19,12 @@ const Registration = () => {
         "http://localhost/myapp/backend/registration.php",
         { name, email, contact, address, password }
       );
-      alert(response.data.message);
+      alert(response.data.message); 
+      setIsLogin(true);
+
     } catch {
       alert("Registration Failed");
+
     }
   };
 
@@ -93,6 +96,7 @@ const Registration = () => {
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
