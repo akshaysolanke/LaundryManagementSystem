@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Aboutus from "./pages/Aboutus/Aboutus";
 import Services from "./pages/Services/Services";
 import Registration from "./pages/Registration/Registration"
+import Order from "./pages/Order/Order";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="/aboutus" element={<Aboutus/>}></Route>
       <Route path="/services" element={<Services/>}></Route>
       <Route path="/registration" element={<Registration/>}></Route>
+      <Route path="/create-order" element={<Order />}></Route>
     </Routes>
     
     <Footer/>
