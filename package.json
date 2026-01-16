@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@prisma/client": "^6.2.1",
-    "axios": "^1.8.1",
+    "axios": "^1.13.2",
+    "bootstrap": "^5.3.8",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
-    "react-bootstrap": "^2.10.9",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.1.1",
